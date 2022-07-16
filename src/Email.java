@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Email {
@@ -15,19 +16,19 @@ public class Email {
         this.department = setDepartment();
         System.out.println("Department:" + this.department);
         this.password = randomPassword(6);
-        System.out.println("Your is password:" + this.password);
+        System.out.println("Your password is:" + this.password);
+        this.email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "."+"gmail.com";
+        System.out.println("Your email is:" + this.email);
     }
 
     private String setDepartment() {
-        System.out.print("Select department\n1:for Development\n2:for Accounting\n3:for Sales\nEnter department:");
+        System.out.print("Select department\n1:for Teacher\n2:for Student\nEnter department:");
         Scanner scanner = new Scanner(System.in);
         int department = scanner.nextInt();
         if (department == 1) {
-            return "Development";
+            return "teacher";
         } else if (department == 2) {
-            return "Accounting";
-        } else if (department == 3) {
-            return "Sales";
+            return "student";
         } else {
             return "";
         }
