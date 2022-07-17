@@ -10,6 +10,7 @@ public class EmailApp {
         System.out.print("Enter last name:");
         String lastName = scanner.nextLine();
         Email email = new Email(firstName, lastName);
+        System.out.println(email.showInfo());
     }
 
 }

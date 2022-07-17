@@ -7,18 +7,19 @@ public class Email {
     private String department;
     private String password;
     private String email;
-    private int mailCapacity;
+    private int mailCapacity=500;
 
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Email created:" + this.firstName + this.lastName);
+
         this.department = setDepartment();
         System.out.println("Department:" + this.department);
+
         this.password = randomPassword(6);
         System.out.println("Your password is:" + this.password);
-        this.email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "."+"gmail.com";
-        System.out.println("Your email is:" + this.email);
+
+        this.email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department + "." + "gmail.com";
     }
 
     private String setDepartment() {
@@ -45,6 +46,24 @@ public class Email {
         return new String(password);
     }
 
+    public void setMailCapacity(int capacity) {
+        this.mailCapacity = capacity;
+    }
 
+
+    public int getMailCapacity() {
+        return mailCapacity;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String showInfo() {
+        return "Display name: " + firstName + " " + lastName +
+                "\nCompany Email: " + email +
+                "\nMailBox capacity " + mailCapacity + "mb";
+
+    }
 }
 
